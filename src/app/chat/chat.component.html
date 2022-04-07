@@ -8,7 +8,7 @@
         <mat-card *ngFor="let channel of channelList" >
             <mat-card-header>
                 <mat-card-title>Message from: {{channel.user}} at time: {{channel.timestamp}}</mat-card-title>
-                <mat-card-subtitle>Message itself: {{channel.message}}</mat-card-subtitle>
+                <mat-card-subtitle>{{channel.message}}</mat-card-subtitle>
             </mat-card-header>
         </mat-card>
       </div>
