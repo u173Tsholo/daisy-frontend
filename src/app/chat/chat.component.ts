@@ -46,7 +46,7 @@ export class ChatComponent implements OnInit {
     else{
       this.currentUser = {
         "token": this.token,
-        "role": "Admin",
+        "role": "admin",
         "message": msgObject.newMessage
       };
       if (msgObject.newMessage == "Exit" || msgObject.newMessage == "exit") {
@@ -90,7 +90,7 @@ export class ChatComponent implements OnInit {
     console.log("token ", this.token);
     this.userRole = localStorage.getItem('role');
     console.log("role ", this.userRole);
-    if(this.userRole == "Admin"){ this.admin = true; }
+    if(this.userRole == "admin"){ this.admin = true; }
 
     this.userChatServiceForm = this.formBuilder.group({
       newMessage: ['', [Validators.required]]
