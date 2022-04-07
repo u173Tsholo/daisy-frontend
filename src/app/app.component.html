@@ -1,0 +1,21 @@
+
+        <header id="header">
+          <img src="assets/images/flower.gif">
+          <div class="one"><a href="index.html">Daisy</a></div>
+          <nav class="links">
+            <ul>
+              <li><a href="/home">Calendar</a></li>
+              <li><a href="/faqs">FAQs</a></li>
+              <!-- <li><a href="/period">Period</a></li> -->
+              <!-- <li><a href="/mental">Mental</a></li> -->
+              <!-- <li><a href="/gbv">GBV</a></li> -->
+              <li id="two"><a href="/account">Profile</a></li>
+              <li *ngIf="!show" id="two"><a href="/login">Login</a></li>
+              <li *ngIf="!show" id="two"><a href="/register">Register</a></li>
+              <li *ngIf="show" id="two"><a (click)="logout()">Logout</a></li>
+            </ul>
+          </nav>
+        </header>
+
+
+        <router-outlet></router-outlet>

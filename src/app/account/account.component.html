@@ -1,0 +1,53 @@
+
+
+<h1 class="main-title">Account Details</h1>   
+
+
+<div class="container">
+<div class="calendar">
+      
+    <mat-horizontal-stepper labelPosition="bottom" #stepper class="stepper">
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>All About Me</ng-template>
+            <mat-form-field class="example-full-width">
+              <mat-label>Full Name</mat-label>
+              <input matInput value="Jane Doe" > 
+              <!-- formControlName="name" -->
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Email Address</mat-label>
+              <input matInput value="jane@doe.com">
+            </mat-form-field>            
+            <mat-form-field class="example-full-width">
+              <mat-label>Telephone</mat-label>
+              <span matPrefix>+27 &nbsp;</span>
+              <input type="tel" matInput value="555 5551">
+              <mat-icon matSuffix>mode_edit</mat-icon>
+            </mat-form-field>            
+            <div class="nxtBtnDiv">
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Address Details</ng-template>
+            <mat-form-field class="example-full-width">
+              <mat-label>Physical Address</mat-label>
+              <textarea matInput value="12 Sunshine Road, SomeArea, 0002"></textarea>
+            </mat-form-field>
+            <mat-slide-toggle>Allow GPS Tracking</mat-slide-toggle>
+            <div>
+              <button class="nxtBtnDiv" mat-button matStepperPrevious>Back</button>
+            </div>
+          </form>
+        </mat-step>
+
+      </mat-horizontal-stepper>
+      
+
+</div>
+</div>
+

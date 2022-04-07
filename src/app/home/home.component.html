@@ -1,0 +1,63 @@
+
+
+<!-- <h1 class="main-title">Cycle Calendar</h1>  -->
+<h1 class="main-title">{{monthName}} {{year}}</h1> 
+
+
+<div class="container">
+<div class="calendar">
+
+    <div class="editMe">
+        <h3 class="period"> Next period - 18 to 23 April  &nbsp;</h3>
+        <button mat-raised-button class="btns" type="button" routerLink="/help">
+            Edit Period
+        </button>
+    </div>
+    <h3 class="ovulation"> Next Ovulation - 09 April</h3>
+    <br/>
+      
+    <!-- <h3 class="monthName"> {{monthName}} {{year}}</h3> -->
+    <div></div>
+
+    <table >
+    <thead>
+        <tr>
+            <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
+        </tr>
+    </thead>
+    <tbody>  
+        <tr>  
+            <td *ngFor="let entry of weekOneArray">{{entry}}</td>  
+        </tr>  
+    </tbody> 
+    <tbody>  
+        <tr >  
+            <td *ngFor="let entry of weekTwoArray">{{entry}}</td>  
+            <td [ngStyle]="{'background-color': '#f6c616' }" *ngFor="let entry of weekTwoArrayv1">{{entry}}</td>  
+        </tr>  
+    </tbody> 
+    <tbody>  
+        <tr >  
+            <td *ngFor="let entry of weekThreeArray">{{entry}} </td>  
+        </tr>  
+    </tbody> 
+    <tbody>  
+        <tr >  
+            <td *ngFor="let entry of weekFourArrayv1">{{entry}}</td>
+            <td [ngStyle]="{'background-color': 'pink' }" *ngFor="let entry of weekFourArray">{{entry}}</td>  
+        </tr>  
+    </tbody> 
+    <tbody>  
+        <tr >  
+            <td *ngFor="let entry of weekFiveArray">{{entry}}</td>  
+        </tr>  
+    </tbody> 
+    <tbody>  
+        <tr >  
+            <td *ngFor="let entry of weekSixArray">{{entry}}</td>  
+        </tr>  
+    </tbody> 
+    </table>
+
+</div>
+</div>
