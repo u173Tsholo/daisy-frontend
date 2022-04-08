@@ -25,7 +25,7 @@ import { MatIconModule } from '@angular/material/icon';
 //import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatTableModule} from '@angular/material/table';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 // import { MatCardModule } from '@angular/material/card';
@@ -37,7 +37,7 @@ import {MatListModule} from '@angular/material/list';
 import { AccountComponent } from './account/account.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-
+import {BaseUrlInterceptor} from './services/base-url.interceptor';
 
 @NgModule({
   declarations: [
@@ -74,7 +74,9 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     //MatGridListModule, MatRadioModule,
 
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: BaseUrlInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
