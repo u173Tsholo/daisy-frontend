@@ -16,33 +16,33 @@ export class ApiService {
   //create new user
   createUser(newUser: any){
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'} ) };
-    return this.http.post('http://localhost:3200/api/users/createUser',newUser, httpOptions);
+    return this.http.post('users/createUser',newUser, httpOptions);
   }
 
   loginUser(currentUser: any){
     console.log('sending you: ', currentUser);
     const httpOptions = { headers: new HttpHeaders( { 'Content-Type': 'application/json' })};
-    return this.http.post('http://localhost:3200/api/users/login', currentUser, httpOptions);
+    return this.http.post('users/login', currentUser, httpOptions);
   }
 
   resetPassword(currentUser: any){
     const httpOptions = { headers: new HttpHeaders( { 'Content-Type': 'application/json' })};
-    return this.http.put('http://localhost:3200/api/users/resetPassword', currentUser, httpOptions);
+    return this.http.put('users/resetPassword', currentUser, httpOptions);
   }
 
   getUser(token: any){
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'} ) };
-    return this.http.post('http://localhost:3200/api/users/getUser',token, httpOptions);
+    return this.http.post('users/getUser',token, httpOptions);
   }
 
   updateName(currentUser: any){
     const httpOptions = { headers: new HttpHeaders( { 'Content-Type': 'application/json' })};
-    return this.http.put('http://localhost:3200/api/users/updateName', currentUser, httpOptions);
+    return this.http.put('users/updateName', currentUser, httpOptions);
   }
 
   updateUsername(currentUser: any){
     const httpOptions = { headers: new HttpHeaders( { 'Content-Type': 'application/json' })};
-    return this.http.put('http://localhost:3200/api/users/updateUsername', currentUser, httpOptions);
+    return this.http.put('users/updateUsername', currentUser, httpOptions);
   }
 
 
@@ -56,24 +56,24 @@ export class ApiService {
 
    createTextChannel(messageObject: any){
     const httpOptions = { headers: new HttpHeaders( { 'Content-Type': 'application/json' })};
-    return this.http.post('http://localhost:3200/api/textChannel/createNewChannel', messageObject, httpOptions);
+    return this.http.post('/textChannel/createNewChannel', messageObject, httpOptions);
    }
 
    getAllChannels(){
-     return this.http.get<any>('http://localhost:3200/api/textChannel/getCurrentChannels');
+     return this.http.get<any>('/textChannel/getCurrentChannels');
    }
 
    //replyToUser
    replyToUser(messageObject: any){
      console.log("sending you: ", messageObject);
     const httpOptions = { headers: new HttpHeaders( { 'Content-Type': 'application/json' })};
-    return this.http.post('http://localhost:3200/api/textChannel/replyToUser', messageObject, httpOptions);
+    return this.http.post('/textChannel/replyToUser', messageObject, httpOptions);
    }
 
    exitChat(currentUser: any){
      console.log("Called");
    const httpOptions = { headers: new HttpHeaders( { 'Content-Type': 'application/json' })};
-   return this.http.put('http://localhost:3200/api/textChannel/endChat', currentUser, httpOptions);
+   return this.http.put('/textChannel/endChat', currentUser, httpOptions);
   }
 
   /**
@@ -90,7 +90,7 @@ export class ApiService {
   sendSOS(sosObject: any){
     console.log("sending you: ", sosObject);
    const httpOptions = { headers: new HttpHeaders( { 'Content-Type': 'application/json' })};
-   return this.http.post('http://localhost:3200/api/textChannel/newSOS', sosObject, httpOptions);
+   return this.http.post('/textChannel/newSOS', sosObject, httpOptions);
   }
 
    /**

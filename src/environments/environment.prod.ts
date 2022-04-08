@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: false,
+  baseurl: 'https://daisy-api-v2.herokuapp.com/api',
 };
