@@ -56,24 +56,24 @@ export class ApiService {
 
    createTextChannel(messageObject: any){
     const httpOptions = { headers: new HttpHeaders( { 'Content-Type': 'application/json' })};
-    return this.http.post('/textChannel/createNewChannel', messageObject, httpOptions);
+    return this.http.post('textChannel/createNewChannel', messageObject, httpOptions);
    }
 
    getAllChannels(){
-     return this.http.get<any>('/textChannel/getCurrentChannels');
+     return this.http.get<any>('textChannel/getCurrentChannels');
    }
 
    //replyToUser
    replyToUser(messageObject: any){
      console.log("sending you: ", messageObject);
     const httpOptions = { headers: new HttpHeaders( { 'Content-Type': 'application/json' })};
-    return this.http.post('/textChannel/replyToUser', messageObject, httpOptions);
+    return this.http.post('textChannel/replyToUser', messageObject, httpOptions);
    }
 
    exitChat(currentUser: any){
      console.log("Called");
    const httpOptions = { headers: new HttpHeaders( { 'Content-Type': 'application/json' })};
-   return this.http.put('/textChannel/endChat', currentUser, httpOptions);
+   return this.http.put('textChannel/endChat', currentUser, httpOptions);
   }
 
   /**
@@ -90,7 +90,7 @@ export class ApiService {
   sendSOS(sosObject: any){
     console.log("sending you: ", sosObject);
    const httpOptions = { headers: new HttpHeaders( { 'Content-Type': 'application/json' })};
-   return this.http.post('/textChannel/newSOS', sosObject, httpOptions);
+   return this.http.post('textChannel/newSOS', sosObject, httpOptions);
   }
 
    /**
